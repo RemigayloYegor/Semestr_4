@@ -3,14 +3,9 @@
 
 int main() {
     std::list<int> L;
-    int n, num;
-    std::cout << "Введите количество элементов в списке: ";
-    std::cin >> n;
-    std::cout << "Введите элементы списка через пробел: ";
-    for (int i = 0; i < n; ++i) {
-        std::cin >> num;
-        L.push_back(num);
-    }
+    std::cout << "Введите данные: ";
+    std::copy(std::istream_iterator<int>(std::cin), std::istream_iterator<int>(),std::back_inserter(L)
+    );
     std::cout << "Исходный список: ";
     for (int elem : L)
     {
