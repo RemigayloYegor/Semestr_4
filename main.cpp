@@ -6,8 +6,9 @@
 
 struct less_abs : public std::binary_function<int, int, bool> 
 {
-    bool operator()(int a, int b) const {
-        return std::abs(a) < std::abs(b);
+    less_abs() : std::function<bool(int, int)>([this](int a, int b) {
+        return abs(a) < abs(b);
+    }) {}
     }
 };
 
