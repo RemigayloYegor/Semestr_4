@@ -4,8 +4,8 @@
 #include <functional>
 #include <cmath>      
 
-class LessAbs {
-public:
+struct less_abs : public std::binary_function<int, int, bool> 
+{
     bool operator()(int a, int b) const {
         return std::abs(a) < std::abs(b);
     }
@@ -13,7 +13,8 @@ public:
 
 int main()
 {
-    std::vector<int> V = {3, -5, 2, 1, -4, 6, -2};
+    std::vector<int> V;
+    std::copy(std::istream_iterator<int>(std::cin),std::istream_iterator<int>(),std::back_inserter(V));
     auto it = std::adjacent_find(V.begin(), V.end(), std::not2(less_abs()));
     if (it != V.end()) 
     {
