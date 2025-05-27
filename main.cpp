@@ -6,7 +6,8 @@
 
 struct less_abs : public std::binary_function<int, int, bool> 
 {
-    less_abs() : std::function<bool(int, int)>([this](int a, int b) {
+    less_abs() : std::function<bool(int, int)>([this](int a, int b)
+    {
         return abs(a) < abs(b);
     }) {}
     }
@@ -20,7 +21,8 @@ int main()
     if (it != V.end()) 
     {
         std::cout << "Найдена пара: (" << *it << ", " << *(it + 1) << ")" << std::endl;
-    } else {
+    } else
+    {
         std::cout << "0" << std::endl;
     }
 
