@@ -4,10 +4,9 @@
 #include <functional>
 #include <cmath>      
 
-struct less_abs : public std::binary_function<int, int, bool> 
-{
-    bool operator()(int a, int b) const 
-    {
+class LessAbs {
+public:
+    bool operator()(int a, int b) const {
         return std::abs(a) < std::abs(b);
     }
 };
