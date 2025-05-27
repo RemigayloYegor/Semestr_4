@@ -5,9 +5,10 @@
 
 int main() 
 {
-    std::vector<int> V1 = {123, 45, 67, 89, 12, 34, 56};
-    std::vector<int> V2 = {11, 22, 33, 44, 55, 66, 77, 88, 99, 100};
+    std::vector<int> V1, V2;
     std::multimap<int, int> M;
+    std::copy(std::istream_iterator<int>(std::cin),std::istream_iterator<int>(),std::back_inserter(V1));
+    std::copy(std::istream_iterator<int>(std::cin),std::istream_iterator<int>(),std::back_inserter(V2));
   
     /*
     *@brief Группировка элементов V2 по последней цифре (задача 21)
