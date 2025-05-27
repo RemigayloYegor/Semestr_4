@@ -2,7 +2,15 @@
 #include <list>
 
 int main() {
-    std::list<int> L = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::list<int> L;
+    int n, num;
+    std::cout << "Введите количество элементов в списке: ";
+    std::cin >> n;
+    std::cout << "Введите элементы списка через пробел: ";
+    for (int i = 0; i < n; ++i) {
+        std::cin >> num;
+        L.push_back(num);
+    }
     std::cout << "Исходный список: ";
     for (int elem : L)
     {
